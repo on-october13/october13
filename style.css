@@ -72,7 +72,7 @@
     filter: grayscale(10%) brightness(90%); 
   }
   
-  .content h1 {
+  .content h3 {
     font-size: 3.5rem;
     text-align: center;
     opacity: 0;
@@ -85,7 +85,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
   
-  .section.active .content h1 {
+  .section.active .content h3 {
     opacity: 1;
     transform: translateY(0);
   }
