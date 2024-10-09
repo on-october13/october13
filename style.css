@@ -25,6 +25,11 @@
     scroll-snap-align: start;
     opacity: 0;
     transition: opacity 1.5s ease, background-color 1.5s ease;
+   
+  background-size: cover; /* Make sure it covers the section */
+  background-position: center; /* Center the image */
+
+
   }
   
   .section.active {
