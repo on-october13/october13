@@ -1,30 +1,19 @@
+// Select all section elements
+const sections = document.querySelectorAll('.section');
 
-gsap.registerPlugin(ScrollTrigger);
-
-
-const sections = document.querySelectorAll(".section");
-
-sections.forEach((section, i) => {
-  gsap.fromTo(section, 
-    { opacity: 0 }, 
-    {
-      opacity: 1,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: section,
-        start: "top center", 
-        end: "bottom center",
-        scrub: true,
-        onEnter: () => fadeInText(section),
-      }
+// Create an Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        // If the section is in view
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active'); // Add active class
+        } else {
+            entry.target.classList.remove('active'); // Remove active class
+        }
     });
+}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
 });
-
-
-function fadeInText(section) {
-  gsap.fromTo(
-    section.querySelector("h1"),
-    { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-  );
-}
