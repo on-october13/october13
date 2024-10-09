@@ -123,4 +123,8 @@
     opacity: 1;
     transform: translateY(-50%) scale(1.05);
   }
+.content img {
+    display: none; /* Hide images temporarily */
+}
+
   
