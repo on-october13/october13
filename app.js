@@ -17,3 +17,5 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     observer.observe(section);
 });
+const sectionContent = document.querySelector('.content');
+sectionContent.innerHTML += '<img src="hope.jpg" alt="Hope">';
